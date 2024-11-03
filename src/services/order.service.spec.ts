@@ -1,3 +1,4 @@
+import exp from "constants";
 import { Customer, Order, OrderItem, OrderService } from "..";
 
 describe("OrderService unit tests", () => {
@@ -20,5 +21,16 @@ describe("OrderService unit tests", () => {
     const order = OrderService.placeOrder(customer1, [item1]);
 
     expect(customer1.rewardPoints).toBe(100);
+  });
+
+  it("should add reward points", () => {
+    const customer = new Customer("c1", "Customer 1");
+    expect(customer.rewardPoints).toBe(0);
+
+    customer.addRewardPoints(100);
+    expect(customer.rewardPoints).toBe(100);
+
+    customer.addRewardPoints(200);
+    expect(customer.rewardPoints).toBe(300);
   });
 });
