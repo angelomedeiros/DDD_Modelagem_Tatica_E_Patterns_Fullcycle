@@ -9,3 +9,6 @@ export { default as Order } from "./order";
 
 // Export OrderItem class
 export { default as OrderItem } from "./order_item";
+
+// Export Product class
+export { default as Product } from "./product";
