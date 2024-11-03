@@ -1,4 +1,4 @@
-import { Order, OrderItem, OrderService } from "..";
+import { Customer, Order, OrderItem, OrderService } from "..";
 
 describe("OrderService unit tests", () => {
   it("should get total of all orders", () => {
@@ -11,5 +11,14 @@ describe("OrderService unit tests", () => {
     const total = OrderService.calculateTotal([order1, order2]);
 
     expect(total).toBe(500);
+  });
+
+  it("should place an order", () => {
+    const item1 = new OrderItem("i1", "Item 1", 100, "Product 1", 2);
+    const customer1 = new Customer("c1", "Customer 1");
+
+    const order = OrderService.placeOrder(customer1, [item1]);
+
+    expect(customer1.rewardPoints).toBe(100);
   });
 });
