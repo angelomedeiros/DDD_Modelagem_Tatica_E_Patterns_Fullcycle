@@ -6,9 +6,9 @@
 import type { Config } from "jest";
 
 const config: Config = {
-  transform: {
-    "^.+.(t|j)sx?$": ["@swc/jest", {}],
-  },
+  // transform: {
+  //   "^.+.(t|j)sx?$": ["@swc/jest", {}],
+  // },
   // All imported modules in your tests should be mocked automatically
   // automock: false,
 
@@ -197,6 +197,10 @@ const config: Config = {
 
   // Whether to use watchman for file crawling
   // watchman: true,
+  testEnvironment: "node",
+  transform: {
+    "^.+.(t|j)sx?$": ["ts-jest", {}],
+  },
 };
 
 export default config;
