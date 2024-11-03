@@ -34,4 +34,8 @@ export default class Product {
   changeName(name: string) {
     this._name = name;
   }
+
+  set price(price: number) {
+    this._price = price;
+  }
 }
